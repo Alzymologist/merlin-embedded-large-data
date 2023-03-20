@@ -11,7 +11,7 @@ fn encode_u64(x: u64) -> [u8; 8] {
     buf
 }
 
-fn encode_usize_as_u32(x: usize) -> [u8; 4] {
+pub fn encode_usize_as_u32(x: usize) -> [u8; 4] {
     use byteorder::{ByteOrder, LittleEndian};
 
     assert!(x <= (u32::max_value() as usize));
@@ -52,7 +52,7 @@ fn encode_usize_as_u32(x: usize) -> [u8; 4] {
 /// Merlin](https://merlin.cool/use/index.html) section.
 #[derive(Clone, Zeroize)]
 pub struct Transcript {
-    strobe: Strobe128,
+    pub strobe: Strobe128,
 }
 
 impl Transcript {

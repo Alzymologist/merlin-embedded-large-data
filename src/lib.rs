@@ -16,8 +16,8 @@ please file an issue!
 );
 
 mod constants;
-mod strobe;
-mod transcript;
+pub mod strobe;
+pub mod transcript;
 
 pub use crate::transcript::Transcript;
 pub use crate::transcript::TranscriptRng;
